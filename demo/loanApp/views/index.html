@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mortgage Based Securities</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-table.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/wenzhixin/bootstrap-table/master/src/bootstrap-table.js"></script>
+</head>
+<body>
+<script>
+$(function () {
+$('#table').bootstrapTable({
+    data:[
+                    {
+                id: 0,
+                secDtls: "Deluxe Bungalow",
+                loanAmt: 499.98,
+                appID: "N24056",
+                auth: "FI1"
+            },
+            {
+                id: 1,
+                secDtls: "Car",
+                loanAmt: 134.99,
+                appID: "C77644",
+                auth: "FI2"
+            },
+            {
+                id: 2,
+                secDtls: "Plot",
+                loanAmt: 49.95,
+                appID: "P12345",
+                auth: "FI3"
+            }
+    ]
+ });
+});
+</script>
+<table class = "table" id = "table">
+    <thead>
+    <tr>
+        <th data-field="id">Account Number</th>
+        <th data-field="loanAmt">Loan Amount</th>
+        <th data-field="secDtls">Security Details</th><!--Hyper link-->
+        <th data-field="appID">Applicant ID</th><!--Name and Details-->
+        <th data-field="auth">Authority</th><!--DROP DOWN-->
+        <th data-checkbox="true"></th>
+        <th>Tranch Applicable?</th>
+    </thead>
+</table>
+<p align="center">
+	<button type="submit" class="btn btn-default">Submit</button>
+	</p>
+</body>
+</html>

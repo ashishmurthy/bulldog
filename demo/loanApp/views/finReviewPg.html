@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mortgage Based Securities</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-table.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/wenzhixin/bootstrap-table/master/src/bootstrap-table.js"></script>
+<script>
+$(function () {
+$('#table').bootstrapTable({
+    data:[
+                    {
+                id: 123,
+                bnkName: "ABN",
+                lnTrm: "1 yr(s)",
+                crdrt:1
+            },
+            {
+                id: 456,
+                bnkName: "HSBCBAN",
+                lnTrm: "2 yr(s)",
+                crdrt: 6
+            },
+            {
+                id: 789,
+                bnkName: "ECB",
+                lnTrm: "10yr(s)",
+                crdrt: 7
+            }
+    ]
+ });
+});
+</script>
+</head>
+<body>
+<h2 align ="center">Financial Review Page</h2>
+<table id = "table">
+    <thead>
+    <tr>
+        <th data-field="id">Account Number</th>
+        <th data-field="bnkName">Bank Name</th>
+        <th data-field="lnTrm">Loan Term</th>
+        <th data-field="crdrt">Credit Rating</th>
+        <th data-checkbox="true"></th>
+    </thead>
+</table>
+<p align="center">
+ <button type="submit" class="btn btn-default">Validate</button>
+ </p>
+</body>
+</html>
