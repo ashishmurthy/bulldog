@@ -9,9 +9,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://rawgit.com/wenzhixin/bootstrap-table/master/src/bootstrap-table.js"></script>
+  <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js" ></script>
+   <script>
+   $(function(){ $("head").load("header.html") });
+   </script> 
 </head>
 <body>
 <script>
+var options = {
+  colors:[['#008000','#00FF00', '##32CD32', '##6B8E23', '##808000', '#CEC6CE', '##FF4500', '##FF0000']]
+}
 $(function () {
 $('#table').bootstrapTable({
     data:[
@@ -36,8 +43,15 @@ $('#table').bootstrapTable({
     ]
  });
 });
+$(function () {
+$('#colorpalette4').colorPalette(options)
+  .on('selectColor', function(e) {
+    $('#selected-color3').val(e.color);
+  });
+});
 </script>
-<h2 align ="center">Financial Review Page</h2>
+<div id = "header"/>
+<div class ="container"><h3>Financial Review Page</h3>
 <table id = "table">
     <thead>
     <tr>
@@ -48,8 +62,25 @@ $('#table').bootstrapTable({
         <th data-checkbox="true"></th>
     </thead>
 </table>
+<div>
+        <!---<input id="selected-color3">-->
+        <div id="colorpalette4" class="bootstrap-colorpalette"><h4 align ="center">Legend</h4>
+  <div align = "center">
+  <button class="btn btn-primary btn-sm" style="background-color:#145A32" data-value="#145A32" title="#145A32"></button><b>1</b>
+  <button class="btn btn-primary btn-sm" style="background-color:#229954" data-value="#229954" title="#229954"></button><b>2</b>
+  <button class="btn btn-primary btn-sm" style="background-color:#00ff80" data-value="#00ff80" title="#00ff80"></button><b>3</b>
+  <button class="btn btn-primary btn-sm" style="background-color:#00ff00" data-value="#00ff00" title="#00ff00"></button><b>4</b>
+  <button class="btn btn-primary btn-sm" style="background-color:#80ff00" data-value="#80ff00" title="#80ff00"></button><b>5</b>
+  <button class="btn btn-primary btn-sm" style="background-color:#ffff00" data-value="#ffff00" title="#ffff00"></button><b>6</b>
+  <button class="btn btn-primary btn-sm" style="background-color:#ff8000" data-value="#ff8000" title="#ff8000"></button><b>7</b>
+  <button class="btn btn-primary btn-sm" style="background-color:#ff0000" data-value="#ff0000" title="#ff0000"></button><b>8</b>
+  </div>
+  </div>
+      </div>
+<br/>
 <p align="center">
  <button type="submit" class="btn btn-default">Validate</button>
  </p>
+</div>
 </body>
 </html>
