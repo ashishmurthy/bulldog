@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mortgage-Backed Securities</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-table.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/wenzhixin/bootstrap-table/master/src/bootstrap-table.js"></script>
+  <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js" ></script>
+  <script>
+   $(function(){ $("head").load("header.html") });
+   <style>
+alert{display: none;}
+</style>
+   </script> 
+</head>
+<body>
+<script>
+var options = {
+  colors:[['#008000','#00FF00', '##32CD32', '##6B8E23', '##808000', '#CEC6CE', '##FF4500', '##FF0000']]
+}
+$(function () {
+$('#table').bootstrapTable({
+    data:[
+            {
+				rating: "AAA",
+				secID: "SEC584095BXY248211",
+				secDesc:"Super Secured",
+				roi:"4 %"
+            },
+            {
+				rating: "AA",
+				secID: "SEC584095BXY248211",
+				secDesc:"Unsecured",
+				roi:"2 %"
+            },
+            {
+				rating: "BB",
+				secID: "SEC6945695BXY24872",
+				secDesc:"Mezzanine",
+				roi:"3.5 %"
+				}
+    ]
+ });
+});
+$(function () {
+$('#colorpalette4').colorPalette(options)
+  .on('selectColor', function(e) {
+    $('#selected-color3').val(e.color);
+  });
+});
+$(function () {
+$('#colorpalette4').colorPalette(options)
+  .on('selectColor', function(e) {
+    $('#selected-color3').val(e.color);
+  });
+});
+$(document).ready(function(){
+    $('button').click(function(){
+        $('.alert').show()
+    }) 
+});
+</script>
+<div id = "header"/>
+<div class ="container"><h3>Investor Review Page</h3>
+<table id = "table">
+    <thead>
+    <tr>
+		<th data-field="rating">Rating</th>
+        <th data-field="secID">Security ID</th>
+        <th data-field="secDesc">Security Desc</th>
+        <th data-field="roi">Rate</th>
+        <th data-checkbox="true"></th>
+    </thead>
+</table>
+<p align="center">
+ <button type="submit" class="btn btn-primary btn-sm" style="background-color:#145A32">Buy</button>
+ <button type="submit" class="btn btn-primary btn-sm" style="background-color:#ff0000">Sell</button>
+ <button type="submit" class="btn btn-primary btn-sm" style="background-color:#000000">Payment</button>
+  </div>
+ </p>
+</body>
+</html>
