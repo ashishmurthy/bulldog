@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Mortgage-Backed Securities</title>
+  <title>Mortgage Based Securities</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,33 +12,17 @@
   <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js" ></script>
    <script>
    $(function(){ $("head").load("header.html") });
-   </script>
+   </script> 
 </head>
 <body>
 <script>
+var options = {
+  colors:[['#008000','#00FF00', '##32CD32', '##6B8E23', '##808000', '#CEC6CE', '##FF4500', '##FF0000']]
+}
 $(function () {
 $('#table').bootstrapTable({
     data:[
-			{
-				loanAccNum: 123,
-                loanAmt: "499,000 EUR",
-				assetID: "N545840959CSC24056",
-				roi:"3 %",
-                bsn: "N24056",
-				appCR:"1",
-                tenor:"1(yr)",
-				fins:"HSBCBAN"
-            },
-            {
-                loanAccNum: 456,
-                loanAmt: "990,450 EUR",
-				assetID: "N545840959ASD24017",
-				roi:"1 %",
-                bsn: "C77644",
-				appCR:"5",
-                tenor:"3(yr)",
-				fins:"CITI"
-            },
+                    
             {
 				loanAccNum: 789,
                 loanAmt: "120,500 EUR",
@@ -65,34 +49,52 @@ $('#table').bootstrapTable({
 				assetID: "N546945695BXY24872",
 				roi:"3.5 %",
                 bsn: "N59267",
-				appCR:"7",
+				appCR:"2",
                 tenor:"3(yr)",
 				fins:" UBS"
             }
     ]
  });
 });
+$(function () {
+$('#colorpalette4').colorPalette(options)
+  .on('selectColor', function(e) {
+    $('#selected-color3').val(e.color);
+  });
+});
 </script>
 <div id = "header"/>
-<div class ="container"><h3>Mortgage Details</h3>
-<table class = "table" id = "table">
+<div class ="container"><h3>Securitization View</h3>
+<table id = "table">
     <thead>
     <tr>
         <th data-field="loanAccNum">Loan Account Number</th>
         <th data-field="loanAmt">Loan Amount</th>
-		<th data-field="assetID">Asset ID</th>
         <th data-field="roi">Rate of Interest</th>
-        <th data-field="bsn">BSN #</th>
         <th data-field="appCR">Applicant CR</th>
         <th data-field="tenor">Tenor</th>
-        <th data-field="fins">Financial Institution</th><!--DROP DOWN-->
         <th data-checkbox="true"></th>
-		<th>Securitize?</th>
     </thead>
 </table>
+<div>
+        <!---<input id="selected-color3">-->
+        <div id="colorpalette4" class="bootstrap-colorpalette"><h4 align ="center">Legend</h4>
+  <div align = "center">
+  <button class="btn btn-primary btn-sm" style="background-color:#145A32" data-value="#145A32" title="#145A32"></button><b>1</b>
+  <button class="btn btn-primary btn-sm" style="background-color:#229954" data-value="#229954" title="#229954"></button><b>2</b>
+  <button class="btn btn-primary btn-sm" style="background-color:#00ff80" data-value="#00ff80" title="#00ff80"></button><b>3</b>
+  <button class="btn btn-primary btn-sm" style="background-color:#00ff00" data-value="#00ff00" title="#00ff00"></button><b>4</b>
+  <button class="btn btn-primary btn-sm" style="background-color:#80ff00" data-value="#80ff00" title="#80ff00"></button><b>5</b>
+  <button class="btn btn-primary btn-sm" style="background-color:#ffff00" data-value="#ffff00" title="#ffff00"></button><b>6</b>
+  <button class="btn btn-primary btn-sm" style="background-color:#ff8000" data-value="#ff8000" title="#ff8000"></button><b>7</b>
+  <button class="btn btn-primary btn-sm" style="background-color:#ff0000" data-value="#ff0000" title="#ff0000"></button><b>8</b>
+  </div>
+  </div>
+      </div>
+<br/>
 <p align="center">
-	<form method="post" action="finReviewPg.html" id="form"><button type="submit" class="btn btn-default">Submit</button></form>
-	</p>
+ <form method="post" action="investorReviewPg.html" id="form"><button type="submit" class="btn btn-default">Tranch</button></form>
+ </p>
 </div>
 </body>
 </html>
