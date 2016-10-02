@@ -19,43 +19,55 @@
 $(function () {
 $('#table').bootstrapTable({
     data:[
-                    {
-                id: 123,
-                secDtls: "Deluxe Bungalow",
-                loanAmt: 499.98,
-                appID: "N24056",
-                auth: "FI1"
+			{
+				loanAccNum: 123,
+                loanAmt: "499,000 EUR",
+				assetID: "N545840959CSC24056",
+				roi:"3 %",
+                bsn: "N24056",
+				appCR:"1",
+                tenor:"1(yr)",
+				fins:"HSBCBAN"
             },
             {
-                id: 456,
-                secDtls: "Car",
-                loanAmt: 134.99,
-                appID: "C77644",
-                auth: "FI2"
+                loanAccNum: 456,
+                loanAmt: "990,450 EUR",
+				assetID: "N545840959ASD24017",
+				roi:"1 %",
+                bsn: "C77644",
+				appCR:"5",
+                tenor:"3(yr)",
+				fins:"CITI"
             },
             {
-                id: 789,
-                secDtls: "Plot",
-                loanAmt: 49.95,
-                appID: "P12345",
-                auth: "FI3"
+			loanAccNum: 789,
+                loanAmt: "120,500 EUR",
+				assetID: "N54584095BXY24821",
+				roi:"4 %",
+                bsn: "N24056",
+				appCR:"7",
+                tenor:"5(yr)",
+				fins:" UBS"
             }
     ]
  });
 });
 </script>
 <div id = "header"/>
-<div class ="container"><h3>Loan and Tranche Details</h3>
+<div class ="container"><h3>Mortgage Details</h3>
 <table class = "table" id = "table">
     <thead>
     <tr>
-        <th data-field="id">Account Number</th>
+        <th data-field="loanAccNum">Loan Account Number</th>
         <th data-field="loanAmt">Loan Amount</th>
-        <th data-field="secDtls">Security Details</th><!--Hyper link-->
-        <th data-field="appID">Applicant ID</th><!--Name and Details-->
-        <th data-field="auth">Authority</th><!--DROP DOWN-->
+		<th data-field="assetID">Asset ID</th>
+        <th data-field="roi">Rate of Interest</th>
+        <th data-field="bsn">BSN #</th>
+        <th data-field="appCR">Applicant CR</th>
+        <th data-field="tenor">Tenor</th>
+        <th data-field="fins">Financial Institution</th><!--DROP DOWN-->
         <th data-checkbox="true"></th>
-        <th>Tranch Applicable?</th>
+		<th>Securitize?</th>
     </thead>
 </table>
 <p align="center">
